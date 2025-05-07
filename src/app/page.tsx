@@ -1,103 +1,66 @@
+import BrandMarquee from "@/components/brand-marquee";
+import Skills from "@/components/skills";
+import { skills } from "@/components/skills/definitions";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="pt-24">
+      <header className="relative h-[494px] bg-white pt-9">
+        <h1 className="font-sora-sans text-black-100 relative z-10 mb-2 text-center text-6xl font-bold uppercase">
+          Hi, I&apos;m Camila
+        </h1>
+        <p className="font-sora-sans text-black-100 relative z-10 text-center text-2xl font-bold">
+          Turning <span className="text-red">‘MEH’</span> into{" "}
+          <span className="text-green">‘WOW’</span> one pixel at a time
+        </p>
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
           priority
+          src="/header_mobile.png"
+          alt=""
+          width={390}
+          height={400}
+          className="absolute bottom-0"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      </header>
+      <div className="bg-black-100">
+        <BrandMarquee />
+      </div>
+      <main className="bg-black-100 px-8">
+        <section className="pt-20 pb-36">
+          <h2 className="bg-purple mb-16 rounded-[56px] px-14 py-5 text-center text-4xl font-bold text-white">
+            About me
+          </h2>
+          <Image
+            src="/profile-pic.png"
+            alt="imagem de perfil"
+            width={241}
+            height={241}
+            className="mx-auto mb-8"
+          />
+          <p className="text-2xl font-bold text-white">
+            I&apos;m a <span className="text-purple">Product Designer</span>{" "}
+            based in Brazil who levels up bad experiences from{" "}
+            <span className="text-red">“404: Fun Not Found”</span> to{" "}
+            <span className="text-green">
+              “SUGOI! This is next-level awesome!”.
+            </span>
+          </p>
+          <p className="mt-8 text-2xl font-bold text-white">
+            I&apos;m here to turn frustrating interfaces into smooth, satisfying
+            experiences — because every user deserves an{" "}
+            <span className="text-yellow">S-tier journey.</span>
+          </p>
+        </section>
+        <section className="pt-12">
+          <h3 className="mb-8 text-2xl font-bold text-white">
+            FEW OF MY <span className="text-yellow">DESIGN SKILLS</span>
+          </h3>
+          {skills.map((skill, index) => (
+            <Skills key={index} skills={skill} />
+          ))}
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
