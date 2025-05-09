@@ -22,7 +22,7 @@
   --text-6xl: 4rem;
   --animate-marquee: marquee 20s linear infinite;
   --breakpoint-md: 676px;
-  --breakpoint-lg: 810px;
+  --breakpoint-lg: 1200px;
 
   @keyframes marquee {
     to {

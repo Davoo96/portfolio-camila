@@ -9,19 +9,19 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="pt-24">
-      <header className="relative h-[494px] bg-white pt-9">
+      <header className="relative h-[494px] bg-white pt-9 md:h-[563px] lg:h-[800px]">
         <div className="px-5">
-          <h1 className="font-sora-sans text-black-100 relative z-10 mb-2 text-center text-6xl font-bold uppercase">
+          <h1 className="font-sora-sans text-black-100 relative z-10 mb-2 text-center text-6xl font-bold uppercase md:text-[88px] lg:mb-4 lg:text-9xl">
             Hi, I&apos;m Camila
           </h1>
-          <p className="font-sora-sans text-black-100 relative z-10 text-center text-2xl font-bold">
+          <p className="font-sora-sans text-black-100 relative z-10 text-center text-2xl font-bold lg:text-4xl">
             Turning <span className="text-red">&lsquo;MEH&rsquo;</span> into{" "}
             <span className="text-green">&lsquo;WOW&rsquo;</span> one pixel at a
             time
           </p>
         </div>
         <picture>
-          <source media="(min-width: 810px)" srcSet="/header.png" />
+          <source media="(min-width: 1200px)" srcSet="/header.png" />
 
           <source media="(min-width: 528px)" srcSet="/header_tablet.png" />
 
@@ -30,7 +30,7 @@ export default function Home() {
             src="/header_mobile.png"
             alt=""
             fill
-            className="absolute bottom-0"
+            className="!top-auto max-h-[550px]"
           />
         </picture>
       </header>
@@ -39,38 +39,45 @@ export default function Home() {
       </div>
       <main className="bg-black-100 px-8 pb-44">
         <section className="pt-20 pb-36">
-          <h2 className="bg-purple mb-16 rounded-[56px] px-14 py-5 text-center text-4xl font-bold text-white md:mb-32">
+          <h2 className="bg-purple mx-auto mb-16 max-w-[300px] rounded-[56px] px-14 py-5 text-center text-4xl font-bold text-white md:mb-32 md:max-w-[450px] md:text-5xl">
             About me
           </h2>
-          <Image
-            src="/profile-pic.png"
-            alt="imagem de perfil"
-            width={241}
-            height={241}
-            className="mx-auto mb-8 md:mb-16"
-          />
-          <p className="text-2xl text-white md:text-4xl">
-            I&apos;m a{" "}
-            <span className="text-purple font-bold">Product Designer</span>{" "}
-            based in Brazil who levels up bad experiences from{" "}
-            <span className="text-red font-bold">“404: Fun Not Found”</span> to{" "}
-            <span className="text-green font-bold">
-              “SUGOI! This is next-level awesome!”.
-            </span>
-          </p>
-          <p className="mt-8 text-2xl text-white md:text-4xl">
-            I&apos;m here to turn frustrating interfaces into smooth, satisfying
-            experiences — because every user deserves an{" "}
-            <span className="text-yellow font-bold">S-tier journey.</span>
-          </p>
+          <div className="grid grid-cols-1 items-center justify-center lg:grid-cols-4 lg:gap-16">
+            <Image
+              src="/profile-pic.png"
+              alt="imagem de perfil"
+              width={241}
+              height={241}
+              className="col-span-1 mx-auto mb-8 md:mb-16 lg:mb-0"
+            />
+            <div className="col-span-3">
+              <p className="text-2xl text-white md:text-4xl">
+                I&apos;m a{" "}
+                <span className="text-purple font-bold">Product Designer</span>{" "}
+                based in Brazil who levels up bad experiences from{" "}
+                <span className="text-red font-bold">“404: Fun Not Found”</span>{" "}
+                to{" "}
+                <span className="text-green font-bold">
+                  “SUGOI! This is next-level awesome!”.
+                </span>
+              </p>
+              <p className="mt-8 text-2xl text-white md:text-4xl">
+                I&apos;m here to turn frustrating interfaces into smooth,
+                satisfying experiences — because every user deserves an{" "}
+                <span className="text-yellow font-bold">S-tier journey.</span>
+              </p>
+            </div>
+          </div>
         </section>
-        <section className="mx-auto max-w-[296px] py-12 md:max-w-[640px] md:py-64">
+        <section className="mx-auto max-w-[296px] py-12 md:max-w-[640px] md:py-64 lg:max-w-full">
           <h3 className="mb-8 text-2xl font-bold text-white md:text-4xl">
             FEW OF MY <span className="text-yellow">DESIGN SKILLS</span>
           </h3>
-          {skills.map((skill, index) => (
-            <Skills key={index} skills={skill} />
-          ))}
+          <div className="grid grid-cols-1 items-center justify-center lg:grid-cols-2 lg:gap-8">
+            {skills.map((skill, index) => (
+              <Skills key={index} skills={skill} />
+            ))}
+          </div>
           <h3 className="mt-8 text-right text-2xl font-bold text-white md:text-4xl">
             <span className="text-yellow">SIX YEARS</span> OF EXPERIENCE
           </h3>
@@ -95,7 +102,7 @@ export default function Home() {
         </p>
         <div className="relative mx-auto my-0 h-[452px] w-full max-w-[676px] md:h-[500px] md:max-w-[810px] lg:h-[600px] lg:max-w-[1400px]">
           <picture>
-            <source media="(min-width: 810px)" srcSet="/footer.png" />
+            <source media="(min-width: 1200px)" srcSet="/footer.png" />
 
             <source media="(min-width: 676px)" srcSet="/footer_tablet.png" />
 
